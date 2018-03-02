@@ -1,0 +1,84 @@
+@font-face {
+  font-family: dig7;
+  src: url(dig7.ttf);
+}
+
+* {
+margin: 0;
+padding: 0;
+color: #ff0000;
+background: #222A46;
+font-family: dig7;
+}
+.data {
+  border: 1px solid black;
+}
+.timeline {
+  content: '';
+  width: 70vw;
+  height: 25px;
+  background: #1d253e;
+  border: 1px solid #ff0000;
+}
+
+#flightprogress {
+  content: '';
+  width: 60vw;
+  height: 20px;
+  background: #ff0000;
+  border: 1px solid #ff0000;
+}
+.fuel-thing{
+  display: flex;
+  flex-flow: row;
+  align-items:flex-end;
+}
+.half-circle {
+  width: 14em;
+  height:7em;
+  background: #fff;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.inner {
+  width: 11em;
+  height: 5.5em;
+  background: #222A46;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+@media only screen and (max-width: 320px) {
+body {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.visualisation {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+}
+}
+
+@media only screen and (min-width: 321px) and (max-width: 720px) {
+
+}
+
+@media only screen and (min-width: 721px) and (max-width: 1024px) {
+
+}
+
+@media only screen and (min-width: 1025px) {
+
+}
