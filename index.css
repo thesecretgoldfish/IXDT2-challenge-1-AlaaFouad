@@ -1,8 +1,4 @@
 @font-face {
-  font-family: dig7;
-  src: url(dig7.ttf);
-}
-@font-face {
   font-family: trench;
   src: url(trench.ttf);
 }
@@ -16,6 +12,9 @@ box-sizing: border-box;
 }
 h1, h2 {
   color: #f24d4d;
+}
+h1 {
+  text-transform: uppercase;
 }
 body {
   background: #003B59;
@@ -389,106 +388,163 @@ footer {
 }
 
 @media only screen and (min-width: 721px) and (max-width: 1024px) {
-  header {
-    background-color: #f24d4d;
-    border-bottom: 3px solid #ace7ef;
-    width: 100vw;
-    margin-bottom: 2em;
-  }
-  main section {
-    width: 30%;
-    height: 100%;
-  }
-  figure {
-    width: 70%;
-    margin: auto;
-  }
-  header figure img {
-    width: 100%;
-  }
-  main {
-    width: 100vw;
-    overflow: hidden;
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    justify-content:space-around;
-    align-items: center;
-    text-align: center;
-  }
-  h1 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-  }
-  #timer {
-    font-size:4rem;
-    color: #ace7ef;
-  }
-  .temperature h2 {
-    color: #ace7ef;
-    font-size: 10rem;
-  }
-  .timeline {
-    display: flex;
-    flex-flow: row;
-    justify-content:flex-start;
-    align-items: center;
-  }
-  .eta {
-    height: 100% !important;
-  }
-  .progress {
-    width: 100vw;
-    overflow: hidden;
-    height: 100% !important;
-  }
-  .visualisation {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .timeline {
-    width: 80vw;
-    height: 30px;
-  }
-  #flightprogress {
-    width: 70vw;
-    height: 30px;
-  }
-  .accelforce {
-    display: flex;
-    flex-flow: column;
-    color: #1d253e;
-    font-size: 1.5rem;
-    justify-content: center;
-    align-items: center;
-  }
-  #forfood, #forwater {
-    font-size: 1.5rem;
-    width: 40vw;
-    margin: auto;
-  }
-  footer {
-    font-size: 1.3rem;
-  }
+header {
+  background-color: #f24d4d;
+  border-bottom: 3px solid #ace7ef;
+  width: 100vw;
+  margin-bottom: 2em;
+}
+header figure img {
+  width: 60%;
+  margin: auto;
+}
+main {
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  align-items: center;
+  text-align: center;
+}
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+main section {
+  margin-bottom: 2em;
+}
+#timer {
+  font-size:4rem;
+  color: #ace7ef;
+}
+.temperature h2 {
+  color: #ace7ef;
+  font-size: 10rem;
+}
+.timeline {
+  display: flex;
+  flex-flow: row;
+  justify-content:flex-start;
+  align-items: center;
+}
+.visualisation {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.progress {
+  width: 60vw;
+}
+.timeline {
+  width: 50vw;
+  height: 30px;
+}
+#flightprogress {
+  width: 40vw;
+  height: 30px;
+}
+.accelforce {
+  display: flex;
+  flex-flow: column;
+  color: #1d253e;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#forfood, #forwater {
+  font-size: 1.5rem;
+  width: 40vw;
+  margin: auto;
+}
+footer {
+  font-size: 1.3rem;
+}
 }
 
 @media only screen and (min-width: 1025px) {
 body {
-  height: 100vh;
+  overflow-x: hidden;
+  background: #e24b3a;
+}
+header {
   width: 100vw;
-  background-color: #ACE7EF;
+  height: 5vh;
+  margin-bottom: 2em;
+}
+header figure {
+  width: 30%;
+  margin: auto;
+}
+header figure img {
+  width: 100%;
 }
 main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 60vw;
-    margin: 0 auto;
-
+  width: 60vw;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  background: #003B59;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  padding: 1em;
+  text-align: center;
+  box-shadow: 0px 5px 20px 1px #122833;
 }
-.data {
-  width: 35%;
+main section {
+  width: 50%;
+  margin-bottom: 2em;
+}
+main section h1 {
+  font-size: 1.8rem;
+  color: #e24b3a;
+}
+#timer {
+  font-size: 3.5rem;
+  color: #ace7ef;
+}
+.progress h1 {
+  margin-bottom: 1em;
+}
+.visualisation {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+.timeline {
+  width: 90%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+#flightprogress {
+  width: 84%;
+}
+.accelforce-container {
+  width: 5em;
+  margin: auto;
+}
+#acceleration p, #gforce p {
+  font-size: 1.2rem;
+}
+.temperature h2 {
+  color: #ace7ef;
+  font-size: 7rem;
+}
+#forfood, #forwater {
+  width: 50%;
+  margin: auto;
+  font-size:2rem;
+}
+footer {
+  background-color: #003B59;
+  color: #ace7ef;
 }
 }
