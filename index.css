@@ -7,26 +7,22 @@
 margin: 0;
 padding: 0;
 color: #ff0000;
-background: #222A46;
 font-family: dig7;
 }
-.data {
-  border: 1px solid black;
+body {
+  background: #003B59;
 }
 .timeline {
   content: '';
-  width: 70vw;
   height: 25px;
   background: #1d253e;
-  border: 1px solid #ff0000;
+  padding: 2px;
+  border: 1px solid #ace7ef;
 }
-
 #flightprogress {
   content: '';
-  width: 60vw;
   height: 20px;
-  background: #ff0000;
-  border: 1px solid #ff0000;
+  background: #ace7ef;
 }
 .fuel-thing{
   display: flex;
@@ -39,8 +35,7 @@ font-family: dig7;
   background: #fff;
   border-top-left-radius: 50% 100%;
   border-top-right-radius: 50% 100%;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-bottom: none;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -55,19 +50,170 @@ font-family: dig7;
   border-bottom-right-radius: 0;
 }
 
+.speed-chart {
+  position: relative;
+  width: 11em;
+  height: 5.5em;
+  overflow: hidden;
+}
+.speed-chart::before,
+.speed-chart::after {
+  position: absolute;
+}
+
+.speed-chart::before {
+  content: '';
+  width: inherit;
+  height: inherit;
+  border: 25px solid #ace7ef;
+  border-bottom: none;
+  border-top-left-radius: 175px;
+  border-top-right-radius: 175px;
+}
+
+.speed-chart div {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border: 25px solid;
+  border-top: none;
+  border-bottom-left-radius: 175px;
+  border-bottom-right-radius: 175px;
+  transform-origin: 50% 0;
+  animation-fill-mode: forwards;
+  animation-duration: .4s;
+  animation-timing-function: linear;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.speed-chart div:nth-child(1) {
+  z-index: 4;
+  border-color: green;
+  animation-name: rotate-one;
+}
+@keyframes rotate-one {
+  100% {
+    transform: rotate(45.6deg);
+    /**
+     * 12% => 21.6deg
+     */
+  }
+}
+.speed-chart span {
+  backface-visibility: hidden;
+  animation: fade-in .4s linear forwards;
+}
+@keyframes fade-in {
+  0%,
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.speed-force {
+  width: 5em;
+  height: 12em;
+  background: #5f7995;
+  display: flex;
+  align-items: flex-end;
+}
+.acceleration {
+    width: 5em;
+    height: 8em;
+    background: #ace7ef;
+}
+.g-force {
+  width: 5em;
+  height: 2em;
+  background: #ff0000;
+}
+
 @media only screen and (max-width: 320px) {
-body {
+header {
+  background-color: #f24d4d;
+  border-bottom: 3px solid #ace7ef;
+  width: 100vw;
+  margin-bottom: 2em;
+}
+main section {
+  width: 100vw;
+  margin-bottom: 1.5em;
+}
+figure {
+  width: 90%;
+  margin: auto;
+}
+header figure img {
+  width: 100%;
+}
+main {
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
 }
-
+main {
+  text-align: center;
+}
+h1 {
+  font-size: 1.7rem;
+}
+#timer {
+  font-size:4rem;
+  color: #ace7ef;
+}
+.temperature h2 {
+  color: #ace7ef;
+  font-size: 5rem;
+}
+.timeline {
+  display: flex;
+  flex-flow: row;
+  justify-content:flex-start;
+  align-items: center;
+}
+#triangle_right {
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-left: 16px solid #ace7ef;
+    border-bottom: 8px solid transparent;
+    animation: animate 1s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: translate(0%, 0);
+    opacity: 0;
+  }
+  80% {
+    transform: translate(30%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(60%, 0%);
+    opacity: 0;
+  }
+}
 .visualisation {
   display: flex;
   flex-flow: row;
   justify-content: space-around;
   align-items: center;
+}
+
+.timeline {
+  width: 70vw;
+  height: 25px;
+}
+#flightprogress {
+  width: 60vw;
+  height: 20px;
 }
 }
 
@@ -76,9 +222,26 @@ body {
 }
 
 @media only screen and (min-width: 721px) and (max-width: 1024px) {
-
+  body {
+    background-color: pink;
+  }
 }
 
 @media only screen and (min-width: 1025px) {
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #ACE7EF;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60vw;
+    margin: 0 auto;
 
+}
+.data {
+  width: 35%;
+}
 }

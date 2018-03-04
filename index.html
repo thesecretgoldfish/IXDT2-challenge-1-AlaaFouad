@@ -8,14 +8,15 @@
   initial-scale=1"/>
 </head>
 <body>
+  <header>
+  <figure>
+    <img src="img/spacex.png"/>
+  </figure>
+</header>
+  <main>
   <section class="data eta">
     <h1>Estimated time of arrival</h1>
       <p id="timer"></p>
-  </section>
-
-  <section class="data temperature">
-    <h1>Temperature</h1>
-    <h2>14°</h2>
   </section>
 
   <section class="data progress">
@@ -25,12 +26,18 @@
     <div class="timeline">
       <div id="flightprogress">
       </div>
+      <div id="triangle_right"></div>
     </div>
     <img src="img/mars.png"/>
   </div>
   </section>
 
-  <section class="data aircraft-status">
+  <section class="data temperature">
+    <h1>Temperature</h1>
+    <h2>14°</h2>
+  </section>
+
+  <!--<section class="data aircraft-status">
     <h1>Aircraft status</h1>
     <section class="fuel">
       <h2>fuel level</h2>
@@ -45,9 +52,15 @@
     </section>
     <section class="speed">
       <h2>speed</h2>
+      <div class="speed-chart">
+        <div>
+          <span>10234 km/h</span>
+        </div>
+      </div>
     </section>
 
   </section>
+
   <section class="data acceleration">
     <div class="accelerate">
       <h1>Acceleration</h1>
@@ -56,10 +69,19 @@
     <h1>G-force</h1>
     </div>
   </section>
+     -->
+
+  <section class="data speed-force">
+    <div class="acceleration">
+    <div class="g-force"></div>
+  </div>
+
+  </section>
+
   <section class="data supplies">
     <h1>supplies</h1>
   </section>
-
+</main>
   <script>
   var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
 
