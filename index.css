@@ -9,8 +9,13 @@
 * {
 margin: 0;
 padding: 0;
-color: #f24d4d;
 font-family: trench;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+h1, h2 {
+  color: #f24d4d;
 }
 body {
   background: #003B59;
@@ -27,12 +32,49 @@ body {
   height: 20px;
   background: #ace7ef;
 }
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+#triangle_right {
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-left: 16px solid #ace7ef;
+    border-bottom: 8px solid transparent;
+    animation: animate 1s linear infinite;
 }
-
+@keyframes animate {
+  0% {
+    transform: translate(0%, 0);
+    opacity: 0;
+  }
+  80% {
+    transform: translate(20%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(50%, 0%);
+    opacity: 0;
+  }
+}
+.accelforce-container {
+  background: #1d253e;
+  width: 5em;
+  height: 15em;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: center;
+  color: #1d253e;
+}
+#acceleration {
+  width: 5em;
+  height: 9em;
+  background: #ace7ef;
+}
+#gforce {
+  width: 5em;
+  height:2em;
+  background: #f24d4d;
+}
 .donut-chart {
   position: relative;
 	width: 200px;
@@ -98,6 +140,7 @@ p.percentage-supplies {
   position: absolute;
   text-align: center;
   font-size: 28px;
+  color: #003B59;
   top:0;left:0;bottom:0;right:0;
   width: 130px;
   height: 130px;
@@ -126,7 +169,7 @@ p.percentage-supplies {
   transform: rotate(0deg);
 }
 #food .circle-supplies {
-  background-color: #E64C65;
+  background-color: #f24d4d;
   animation: first 1s 1 forwards;
 }
 #water {
@@ -146,9 +189,18 @@ p.percentage-supplies {
     from {transform: rotate(0deg);}
     to {transform: rotate(150deg);}
 }
+#forfood {
+background: #f24d4d;
+color: #003B59;
+text-align: center;
+}
+#forwater {
+  text-align: center;
+  background: #00A1FE;
+  color: #003B59;
+}
 
-
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 320px) {
 header {
   background-color: #f24d4d;
   border-bottom: 3px solid #ace7ef;
@@ -217,29 +269,17 @@ h1 {
   width: 60vw;
   height: 20px;
 }
-#triangle_right {
-    width: 0;
-    height: 0;
-    border-top: 8px solid transparent;
-    border-left: 16px solid #ace7ef;
-    border-bottom: 8px solid transparent;
-    animation: animate 1s linear infinite;
+.accelforce {
+  display: flex;
+  flex-flow: column;
+  color: #1d253e;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
 }
-@keyframes animate {
-  0% {
-    transform: translate(0%, 0);
-    opacity: 0;
-  }
-  80% {
-    transform: translate(20%, 0%);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(50%, 0%);
-    opacity: 0;
-  }
+#forfood, #forwater {
+  font-size: 1.5rem;
 }
-
 }
 
 @media only screen and (min-width: 321px) and (max-width: 720px) {
