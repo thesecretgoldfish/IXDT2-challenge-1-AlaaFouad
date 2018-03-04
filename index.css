@@ -189,7 +189,7 @@ p.percentage-supplies {
     from {transform: rotate(0deg);}
     to {transform: rotate(150deg);}
 }
-#forfood {
+#forfood, #foraccel {
 background: #f24d4d;
 color: #003B59;
 text-align: center;
@@ -199,8 +199,18 @@ text-align: center;
   background: #00A1FE;
   color: #003B59;
 }
+#forgforce {
+  background: #ace7ef;
+  color: #003b59;
+}
+footer {
+  text-align: center;
+  width: 100vw;
+  background: #ace7ef;
+  color: #003b59;
+}
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 540px) {
 header {
   background-color: #f24d4d;
   border-bottom: 3px solid #ace7ef;
@@ -277,18 +287,190 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-#forfood, #forwater {
+#accelforce-container {
+  margin-bottom: 3em;
+}
+#foraccel, #forgforce {
+  width: 100vw;
+}
+#forfood, #forwater, #forgforce, #foraccel {
   font-size: 1.5rem;
 }
+footer {
+  font-size: 1.1rem;
+}
 }
 
-@media only screen and (min-width: 321px) and (max-width: 720px) {
-
+@media only screen and (min-width: 541px) and (max-width: 720px) {
+header {
+  background-color: #f24d4d;
+  border-bottom: 3px solid #ace7ef;
+  width: 100vw;
+  margin-bottom: 2em;
+}
+main section {
+  margin-bottom: 2em;
+  width: 50%;
+  height: 400px;
+}
+figure {
+  width: 90%;
+  margin: auto;
+}
+header figure img {
+  width: 100%;
+}
+main {
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  align-items: center;
+  text-align: center;
+}
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+#timer {
+  font-size:4rem;
+  color: #ace7ef;
+}
+.temperature h2 {
+  color: #ace7ef;
+  font-size: 10rem;
+}
+.timeline {
+  display: flex;
+  flex-flow: row;
+  justify-content:flex-start;
+  align-items: center;
+}
+.eta {
+  height: 100% !important;
+}
+.progress {
+  width: 100vw;
+  overflow: hidden;
+  height: 100% !important;
+}
+.visualisation {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.timeline {
+  width: 80vw;
+  height: 30px;
+}
+#flightprogress {
+  width: 70vw;
+  height: 30px;
+}
+.accelforce {
+  display: flex;
+  flex-flow: column;
+  color: #1d253e;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+#forfood, #forwater {
+  font-size: 1.5rem;
+  width: 40vw;
+  margin: auto;
+}
+footer {
+  font-size: 1.3rem;
+}
 }
 
 @media only screen and (min-width: 721px) and (max-width: 1024px) {
-  body {
-    background-color: pink;
+  header {
+    background-color: #f24d4d;
+    border-bottom: 3px solid #ace7ef;
+    width: 100vw;
+    margin-bottom: 2em;
+  }
+  main section {
+    width: 30%;
+    height: 100%;
+  }
+  figure {
+    width: 70%;
+    margin: auto;
+  }
+  header figure img {
+    width: 100%;
+  }
+  main {
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-items: center;
+    text-align: center;
+  }
+  h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+  }
+  #timer {
+    font-size:4rem;
+    color: #ace7ef;
+  }
+  .temperature h2 {
+    color: #ace7ef;
+    font-size: 10rem;
+  }
+  .timeline {
+    display: flex;
+    flex-flow: row;
+    justify-content:flex-start;
+    align-items: center;
+  }
+  .eta {
+    height: 100% !important;
+  }
+  .progress {
+    width: 100vw;
+    overflow: hidden;
+    height: 100% !important;
+  }
+  .visualisation {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .timeline {
+    width: 80vw;
+    height: 30px;
+  }
+  #flightprogress {
+    width: 70vw;
+    height: 30px;
+  }
+  .accelforce {
+    display: flex;
+    flex-flow: column;
+    color: #1d253e;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  #forfood, #forwater {
+    font-size: 1.5rem;
+    width: 40vw;
+    margin: auto;
+  }
+  footer {
+    font-size: 1.3rem;
   }
 }
 
