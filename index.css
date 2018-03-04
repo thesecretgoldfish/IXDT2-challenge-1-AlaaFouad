@@ -44,7 +44,7 @@ p.center {
   background: #ace7ef;
   position: absolute;
   text-align: center;
-  font-size: 2rem;
+  font-size: 28px;
   top:0;left:0;bottom:0;right:0;
   width: 130px;
   height: 130px;
@@ -67,8 +67,6 @@ p.center {
     height: 100%;
     position: absolute;
     width: 100%;
-    font-family: monospace;
-    font-size: 1.5rem;
   }
 .fuel-left h1 {
   color: #f24d4d;
@@ -88,7 +86,6 @@ p.center {
     transform: rotate(100deg);
   }
 }
-
 .supplies-chart {
   position: relative;
 	width: 200px;
@@ -98,10 +95,9 @@ p.center {
  }
 p.percentage-supplies {
   background: #ace7ef;
-  color: #003B59;
   position: absolute;
   text-align: center;
-  font-size: 2rem;
+  font-size: 28px;
   top:0;left:0;bottom:0;right:0;
   width: 130px;
   height: 130px;
@@ -152,7 +148,7 @@ p.percentage-supplies {
 }
 
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 500px) {
 header {
   background-color: #f24d4d;
   border-bottom: 3px solid #ace7ef;
@@ -171,6 +167,8 @@ header figure img {
   width: 100%;
 }
 main {
+  width: 100vw;
+  overflow: hidden;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -198,6 +196,8 @@ h1 {
   align-items: center;
 }
 .progress {
+  width: 100vw;
+  overflow: hidden;
   margin-bottom: 3em;
 }
 .progress h1 {
@@ -231,11 +231,11 @@ h1 {
     opacity: 0;
   }
   80% {
-    transform: translate(30%, 0%);
+    transform: translate(20%, 0%);
     opacity: 1;
   }
   100% {
-    transform: translate(60%, 0%);
+    transform: translate(50%, 0%);
     opacity: 0;
   }
 }
