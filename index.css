@@ -2,12 +2,15 @@
   font-family: dig7;
   src: url(dig7.ttf);
 }
-
+@font-face {
+  font-family: trench;
+  src: url(trench.ttf);
+}
 * {
 margin: 0;
 padding: 0;
-color: #ff0000;
-font-family: dig7;
+color: #f24d4d;
+font-family: trench;
 }
 body {
   background: #003B59;
@@ -24,115 +27,130 @@ body {
   height: 20px;
   background: #ace7ef;
 }
-.fuel-thing{
-  display: flex;
-  flex-flow: row;
-  align-items:flex-end;
-}
-.half-circle {
-  width: 14em;
-  height:7em;
-  background: #fff;
-  border-top-left-radius: 50% 100%;
-  border-top-right-radius: 50% 100%;
-  border-bottom: none;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-.inner {
-  width: 11em;
-  height: 5.5em;
-  background: #222A46;
-  border-top-left-radius: 50% 100%;
-  border-top-right-radius: 50% 100%;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.speed-chart {
+.donut-chart {
   position: relative;
-  width: 11em;
-  height: 5.5em;
-  overflow: hidden;
-}
-.speed-chart::before,
-.speed-chart::after {
+	width: 200px;
+  height: 200px;
+	margin: 0 auto;
+	border-radius: 100%
+ }
+p.center {
+  background: #ace7ef;
   position: absolute;
+  text-align: center;
+  font-size: 2rem;
+  top:0;left:0;bottom:0;right:0;
+  width: 130px;
+  height: 130px;
+  margin: auto;
+  border-radius: 50%;
+  line-height: 35px;
+  padding: 15% 0 0;
+  color: #003B59;
 }
-
-.speed-chart::before {
-  content: '';
-  width: inherit;
-  height: inherit;
-  border: 25px solid #ace7ef;
-  border-bottom: none;
-  border-top-left-radius: 175px;
-  border-top-right-radius: 175px;
-}
-
-.speed-chart div {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: inherit;
-  height: inherit;
-  border: 25px solid;
-  border-top: none;
-  border-bottom-left-radius: 175px;
-  border-bottom-right-radius: 175px;
-  transform-origin: 50% 0;
-  animation-fill-mode: forwards;
-  animation-duration: .4s;
-  animation-timing-function: linear;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-}
-
-.speed-chart div:nth-child(1) {
-  z-index: 4;
-  border-color: green;
-  animation-name: rotate-one;
-}
-@keyframes rotate-one {
-  100% {
-    transform: rotate(45.6deg);
-    /**
-     * 12% => 21.6deg
-     */
+.portion-block {
+    border-radius: 50%;
+    clip: rect(0px, 200px, 200px, 100px);
+    height: 100%;
+    position: absolute;
+    width: 100%;
   }
+.circle {
+    border-radius: 50%;
+    clip: rect(0px, 100px, 200px, 0px);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    font-family: monospace;
+    font-size: 1.5rem;
+  }
+.fuel-left h1 {
+  color: #f24d4d;
 }
-.speed-chart span {
-  backface-visibility: hidden;
-  animation: fade-in .4s linear forwards;
+#part1 {
+  transform: rotate(0deg);
 }
-@keyframes fade-in {
-  0%,
-  90% {
-    opacity: 0;
+#part1 .circle {
+	background-color: #ffbf00;
+	animation: fuel 1s 1 forwards;
+}
+@keyframes fuel {
+  0 {
+    transform: rotate(0deg);
   }
   100% {
-    opacity: 1;
+    transform: rotate(100deg);
   }
 }
 
-.speed-force {
-  width: 5em;
-  height: 12em;
-  background: #5f7995;
-  display: flex;
-  align-items: flex-end;
+.supplies-chart {
+  position: relative;
+	width: 200px;
+  height: 200px;
+	margin: 0 auto 2rem;
+	border-radius: 100%
+ }
+p.percentage-supplies {
+  background: #ace7ef;
+  color: #003B59;
+  position: absolute;
+  text-align: center;
+  font-size: 2rem;
+  top:0;left:0;bottom:0;right:0;
+  width: 130px;
+  height: 130px;
+  margin: auto;
+  border-radius: 50%;
+  line-height: 35px;
+  padding: 15% 0 0;
 }
-.acceleration {
-    width: 5em;
-    height: 8em;
-    background: #ace7ef;
+.portion-block-supplies {
+  border-radius: 50%;
+  clip: rect(0px, 200px, 200px, 100px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
-.g-force {
-  width: 5em;
-  height: 2em;
-  background: #ff0000;
+.circle-supplies {
+  border-radius: 50%;
+  clip: rect(0px, 100px, 200px, 0px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  font-family: monospace;
+  font-size: 1.5rem;
+  }
+#food {
+  transform: rotate(0deg);
 }
+#food .circle-supplies {
+  background-color: #E64C65;
+  animation: first 1s 1 forwards;
+}
+#water {
+  transform: rotate(100deg);
+}
+#water .circle-supplies {
+  background-color: #00A1FE;
+  animation: second 1s 1 forwards 1s;
+}
+
+@keyframes first {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(100deg);}
+}
+
+@keyframes second {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(150deg);}
+}
+
 
 @media only screen and (max-width: 320px) {
 header {
@@ -162,10 +180,11 @@ main {
   text-align: center;
 }
 h1 {
-  font-size: 1.7rem;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 #timer {
-  font-size:4rem;
+  font-size:3rem;
   color: #ace7ef;
 }
 .temperature h2 {
@@ -177,6 +196,26 @@ h1 {
   flex-flow: row;
   justify-content:flex-start;
   align-items: center;
+}
+.progress {
+  margin-bottom: 3em;
+}
+.progress h1 {
+  margin: 1em;
+}
+.visualisation {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.timeline {
+  width: 70vw;
+  height: 25px;
+}
+#flightprogress {
+  width: 60vw;
+  height: 20px;
 }
 #triangle_right {
     width: 0;
@@ -200,21 +239,7 @@ h1 {
     opacity: 0;
   }
 }
-.visualisation {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-around;
-  align-items: center;
-}
 
-.timeline {
-  width: 70vw;
-  height: 25px;
-}
-#flightprogress {
-  width: 60vw;
-  height: 20px;
-}
 }
 
 @media only screen and (min-width: 321px) and (max-width: 720px) {
