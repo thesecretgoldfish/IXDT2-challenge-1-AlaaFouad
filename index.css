@@ -1,0 +1,550 @@
+@font-face {
+  font-family: trench;
+  src: url(../font/trench.ttf);
+}
+* {
+margin: 0;
+padding: 0;
+font-family: trench;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+h1, h2 {
+  color: #f24d4d;
+}
+h1 {
+  text-transform: uppercase;
+}
+body {
+  background: #003B59;
+}
+.timeline {
+  content: '';
+  height: 25px;
+  background: #1d253e;
+  padding: 2px;
+  border: 1px solid #ace7ef;
+}
+#flightprogress {
+  content: '';
+  height: 20px;
+  background: #ace7ef;
+}
+#triangle_right {
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-left: 16px solid #ace7ef;
+    border-bottom: 8px solid transparent;
+    animation: animate 1s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: translate(0%, 0);
+    opacity: 0;
+  }
+  80% {
+    transform: translate(20%, 0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(50%, 0%);
+    opacity: 0;
+  }
+}
+.accelforce-container {
+  background: #1d253e;
+  width: 5em;
+  height: 15em;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: center;
+  color: #1d253e;
+}
+#acceleration {
+  width: 5em;
+  height: 9em;
+  background: #ace7ef;
+}
+#gforce {
+  width: 5em;
+  height:2em;
+  background: #f24d4d;
+}
+.donut-chart {
+  position: relative;
+	width: 200px;
+  height: 200px;
+	margin: 0 auto;
+	border-radius: 100%
+ }
+p.center {
+  background: #ace7ef;
+  position: absolute;
+  text-align: center;
+  font-size: 28px;
+  top:0;left:0;bottom:0;right:0;
+  width: 130px;
+  height: 130px;
+  margin: auto;
+  border-radius: 50%;
+  line-height: 35px;
+  padding: 15% 0 0;
+  color: #003B59;
+}
+.portion-block {
+    border-radius: 50%;
+    clip: rect(0px, 200px, 200px, 100px);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+.circle {
+    border-radius: 50%;
+    clip: rect(0px, 100px, 200px, 0px);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+.fuel-left h1 {
+  color: #f24d4d;
+}
+#part1 {
+  transform: rotate(0deg);
+}
+#part1 .circle {
+	background-color: #ffbf00;
+	animation: fuel 1s 1 forwards;
+}
+@keyframes fuel {
+  0 {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(100deg);
+  }
+}
+.supplies-chart {
+  position: relative;
+	width: 200px;
+  height: 200px;
+	margin: 0 auto 2rem;
+	border-radius: 100%
+ }
+p.percentage-supplies {
+  background: #ace7ef;
+  position: absolute;
+  text-align: center;
+  font-size: 28px;
+  color: #003B59;
+  top:0;left:0;bottom:0;right:0;
+  width: 130px;
+  height: 130px;
+  margin: auto;
+  border-radius: 50%;
+  line-height: 35px;
+  padding: 15% 0 0;
+}
+.portion-block-supplies {
+  border-radius: 50%;
+  clip: rect(0px, 200px, 200px, 100px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.circle-supplies {
+  border-radius: 50%;
+  clip: rect(0px, 100px, 200px, 0px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  font-family: monospace;
+  font-size: 1.5rem;
+  }
+#food {
+  transform: rotate(0deg);
+}
+#food .circle-supplies {
+  background-color: #f24d4d;
+  animation: first 1s 1 forwards;
+}
+#water {
+  transform: rotate(100deg);
+}
+#water .circle-supplies {
+  background-color: #00A1FE;
+  animation: second 1s 1 forwards 1s;
+}
+
+@keyframes first {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(100deg);}
+}
+
+@keyframes second {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(150deg);}
+}
+#forfood, #foraccel {
+background: #f24d4d;
+color: #003B59;
+text-align: center;
+}
+#forwater {
+  text-align: center;
+  background: #00A1FE;
+  color: #003B59;
+}
+#forgforce {
+  background: #ace7ef;
+  color: #003b59;
+}
+footer {
+  text-align: center;
+  width: 100vw;
+  background: #ace7ef;
+  color: #003b59;
+}
+
+@media only screen and (max-width: 540px) {
+header {
+  background-color: #f24d4d;
+  border-bottom: 3px solid #ace7ef;
+  width: 100vw;
+  margin-bottom: 2em;
+}
+main section {
+  width: 100vw;
+  margin-bottom: 1.5em;
+}
+figure {
+  width: 90%;
+  margin: auto;
+}
+header figure img {
+  width: 100%;
+}
+main {
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  text-align: center;
+}
+h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+#timer {
+  font-size:3rem;
+  color: #ace7ef;
+}
+.temperature h2 {
+  color: #ace7ef;
+  font-size: 5rem;
+}
+.timeline {
+  display: flex;
+  flex-flow: row;
+  justify-content:flex-start;
+  align-items: center;
+}
+.progress {
+  width: 100vw;
+  overflow: hidden;
+  margin-bottom: 3em;
+}
+.progress h1 {
+  margin: 1em;
+}
+.visualisation {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.timeline {
+  width: 70vw;
+  height: 25px;
+}
+#flightprogress {
+  width: 60vw;
+  height: 20px;
+}
+.accelforce {
+  display: flex;
+  flex-flow: column;
+  color: #1d253e;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+#accelforce-container {
+  margin-bottom: 3em;
+}
+#foraccel, #forgforce {
+  width: 100vw;
+}
+#forfood, #forwater, #forgforce, #foraccel {
+  font-size: 1.5rem;
+}
+footer {
+  font-size: 1.1rem;
+}
+}
+
+@media only screen and (min-width: 541px) and (max-width: 720px) {
+header {
+  background-color: #f24d4d;
+  border-bottom: 3px solid #ace7ef;
+  width: 100vw;
+  margin-bottom: 2em;
+}
+main section {
+  margin-bottom: 2em;
+  width: 50%;
+  height: 400px;
+}
+figure {
+  width: 90%;
+  margin: auto;
+}
+header figure img {
+  width: 100%;
+}
+main {
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  align-items: center;
+  text-align: center;
+}
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+#timer {
+  font-size:4rem;
+  color: #ace7ef;
+}
+.temperature h2 {
+  color: #ace7ef;
+  font-size: 10rem;
+}
+.timeline {
+  display: flex;
+  flex-flow: row;
+  justify-content:flex-start;
+  align-items: center;
+}
+.eta {
+  height: 100% !important;
+}
+.progress {
+  width: 100vw;
+  overflow: hidden;
+  height: 100% !important;
+}
+.visualisation {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.timeline {
+  width: 80vw;
+  height: 30px;
+}
+#flightprogress {
+  width: 70vw;
+  height: 30px;
+}
+.accelforce {
+  display: flex;
+  flex-flow: column;
+  color: #1d253e;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+#forfood, #forwater {
+  font-size: 1.5rem;
+  width: 40vw;
+  margin: auto;
+}
+footer {
+  font-size: 1.3rem;
+}
+}
+
+@media only screen and (min-width: 721px) and (max-width: 1024px) {
+header {
+  background-color: #f24d4d;
+  border-bottom: 3px solid #ace7ef;
+  width: 100vw;
+  margin-bottom: 2em;
+}
+header figure img {
+  width: 60%;
+  margin: auto;
+}
+main {
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  align-items: center;
+  text-align: center;
+}
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+main section {
+  margin-bottom: 2em;
+}
+#timer {
+  font-size:4rem;
+  color: #ace7ef;
+}
+.temperature h2 {
+  color: #ace7ef;
+  font-size: 10rem;
+}
+.timeline {
+  display: flex;
+  flex-flow: row;
+  justify-content:flex-start;
+  align-items: center;
+}
+.visualisation {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.progress {
+  width: 60vw;
+}
+.timeline {
+  width: 50vw;
+  height: 30px;
+}
+#flightprogress {
+  width: 40vw;
+  height: 30px;
+}
+.accelforce {
+  display: flex;
+  flex-flow: column;
+  color: #1d253e;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#forfood, #forwater {
+  font-size: 1.5rem;
+  width: 40vw;
+  margin: auto;
+}
+footer {
+  font-size: 1.3rem;
+}
+}
+
+@media only screen and (min-width: 1025px) {
+body {
+  overflow-x: hidden;
+  background: #e24b3a;
+}
+header {
+  width: 100vw;
+  height: 5vh;
+  margin-bottom: 2em;
+}
+header figure {
+  width: 30%;
+  margin: auto;
+}
+header figure img {
+  width: 100%;
+}
+main {
+  width: 60vw;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  background: #003B59;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  padding: 1em;
+  text-align: center;
+  box-shadow: 0px 5px 20px 1px #122833;
+}
+main section {
+  width: 50%;
+  margin-bottom: 2em;
+}
+main section h1 {
+  font-size: 1.8rem;
+  color: #e24b3a;
+}
+#timer {
+  font-size: 3.5rem;
+  color: #ace7ef;
+}
+.progress h1 {
+  margin-bottom: 1em;
+}
+.visualisation {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+.timeline {
+  width: 90%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+#flightprogress {
+  width: 84%;
+}
+.accelforce-container {
+  width: 5em;
+  margin: auto;
+}
+#acceleration p, #gforce p {
+  font-size: 1.2rem;
+}
+.temperature h2 {
+  color: #ace7ef;
+  font-size: 7rem;
+}
+#forfood, #forwater {
+  width: 50%;
+  margin: auto;
+  font-size:2rem;
+}
+footer {
+  background-color: #003B59;
+  color: #ace7ef;
+}
+}
