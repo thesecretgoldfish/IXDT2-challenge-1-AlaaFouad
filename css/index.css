@@ -1,6 +1,6 @@
 @font-face {
   font-family: trench;
-  src: url(trench.ttf);
+  src: url(../font/trench.ttf);
 }
 * {
 margin: 0;
